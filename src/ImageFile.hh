@@ -6,8 +6,15 @@
 
 class ImageFile {
 public:
+  ImageFile(std::string);
+  ~ImageFile();
 
-private:
+  std::string getFilename();
+protected:
+  std::fstream m_file;
+  std::string m_filename;
+
+  virtual bool verifyFileType() = 0;
 };
 
 

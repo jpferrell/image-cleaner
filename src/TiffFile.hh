@@ -3,12 +3,16 @@
 
 #include "ImageFile.hh"
 
+#include <iostream>
+
 class TiffFile : public ImageFile {
 public:
   TiffFile(std::string);
   ~TiffFile();
 private:
-  std::string _filename;
+  bool verifyFileType();
+  
+  bool m_isMSB;
 };
 
 #endif //__TIFFFILE__HH__
